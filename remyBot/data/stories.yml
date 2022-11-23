@@ -28,3 +28,21 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: vegan no allergies
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_preference
+  - intent: diet_preference
+  - action: utter_ask_allergies
+  - intent: user_allergies
+  - action: utter_thank_user
+  - action: utter_ask_to_cook
+  - intent: affirm
+  - action: utter_ask_ingredients
+  - intent: user_ingredients
+  - action: utter_search_recipe
+  - intent: affirm
+  - action: utter_start_cooking
+

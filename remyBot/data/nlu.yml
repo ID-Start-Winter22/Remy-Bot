@@ -4,18 +4,19 @@ nlu:
 - intent: greet
   examples: |
     - hey
-    - hello
+    - hallo
     - hi
-    - hello there
-    - good morning
-    - good evening
+    - hey du
+    - guten morgen
+    - guten abend
     - moin
     - hey there
     - let's go
     - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - guten tag
+    - servus
+    - bonjour
+    - salut
 
 - intent: goodbye
   examples: |
@@ -38,6 +39,7 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - ja
 
 - intent: deny
   examples: |
@@ -68,24 +70,51 @@ nlu:
 
 - intent: mood_unhappy
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - mein tag war schrecklich
+    - ich bin traurig
+    - ich fühle mich nicht gut
+    - ich bin enttäuscht
+    - super traurig
+    - ich bin so traurig
+    - traurig
+    - sehr traurig
+    - unglücklich
+    - nicht gut
+    - nicht sehr gut
+    - extrem traurig
+    - so traurig
+    - soo traurig
 
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - bist du ein bot?
+    - bist du ein mensch?
+    - bist du eine person?
+    - spreche ich mit einem bot?
+    - spreche ich mit einer person?
+
+- intent: diet_preference
+  examples: |
+    - vegan
+    - veganer
+    - veganerin
+    - ich bin vegan
+    - ich esse vegan
+    - ich lebe vegan
+    - ich bin veganer
+    - ich bin veganerin
+
+- intent: user_allergies
+  examples: |
+    - keine
+    - ich habe keine allergien
+    - ich bin gegen nichts allergisch
+    - nein
+    - keine allergien
+
+- intent: user_ingredients
+  examples: |
+    - Brokkoli
+    - Mais
+    - Schmand
+    - Nudeln
