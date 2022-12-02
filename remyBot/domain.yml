@@ -8,10 +8,45 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - diet_preference
+  - user_allergies
+  - user_ingredients
 
 responses:
+
+  utter_ask_preference:
+  - text: "Wie kochst du am liebsten?
+🥬 vegan
+🧀 vegetarisch
+🐟 pescetarisch
+🥩Fleisch"
+
+  utter_ask_allergies:
+  - text: "Hast du eine der folgenden Allergien oder Unverträglichkeiten?
+🥛 Laktose
+🌾 Gluten
+🥜 Nüsse"
+
+  utter_thank_user:
+  - text: "Merci, 
+dann weiß ich Bescheid.👌"
+
+  utter_ask_to_cook:
+  - text: "Hast du Lust jetzt etwas zu kochen?"
+
+  utter_ask_ingredients:
+  - text: "D'accord, welche Zutaten möchtest du denn gerne verwerten? 🍲"
+
+  utter_search_recipe:
+  - text: "Ich habe folgende Rezeptvorschläge für dich: Rezept: Cremige Brokkoli Pasta (20 min). Möchtest du dieses Rezept kochen?"
+    image: "https://s.zentrum-der-gesundheit.de/img/3c6eeb8ac739ab76b53462735213c217?width=1280&height=720"
+
+  utter_start_cooking:
+  - text: "Hier ist der Link zum Rezept: https://www.zentrum-der-gesundheit.de/rezepte/hauptgerichte/nudel-rezepte/spaghetti-brokkoli-sauce"
+
   utter_greet:
-  - text: "Bonjour! ich bin Remy?"
+  - text: "Bonjour! Ich bin Rémy – dein persönlicher Helfer, wenn's um's Kochen geht. 
+Schön, dass du da bist! 👋"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"

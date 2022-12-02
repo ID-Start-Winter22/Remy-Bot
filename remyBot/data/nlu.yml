@@ -1,6 +1,36 @@
 version: "3.1"
 
 nlu:
+
+- intent: diet_preference
+  examples: |
+    - Ich lebe vegan
+    - Ich bin veganer
+    - ich ernähre mich vegan
+    - ich bin veganerin
+    - vegan
+    - veganer
+    - veganerin
+    - ich esse vegan
+
+- intent: user_allergies
+  examples: |
+    - ich habe keine allergien
+    - ich bin gegen nichts allergisch
+    - nein
+    - keine
+    - keine Allergien
+    - nö
+
+- intent: user_ingredients
+  examples: |
+    - brokkoli
+    - brokkoli, schmand 
+    - brokkoli, nudeln
+    - nudeln
+    - mais
+    - schmand
+
 - intent: greet
   examples: |
     - hey
@@ -32,12 +62,14 @@ nlu:
 
 - intent: affirm
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - ja
+    - jep
+    - jap
+    - in der Tat
+    - natürlich
+    - klingt gut
+    - richtig
+    - ja klar
 
 - intent: deny
   examples: |
