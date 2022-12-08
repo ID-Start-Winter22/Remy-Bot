@@ -11,24 +11,39 @@ intents:
   - diet_preference
   - user_allergies
   - user_ingredients
+  - out_of_scope
 
 
 
 responses:
 
   utter_ask_preference:
-  - text: "Wie kochst du am liebsten?
-🥬 vegan
-🧀 vegetarisch
-🐟 pescetarisch
-🥩 Fleisch"
+  - text: "Wie kochst du am liebsten?"
+    buttons:
+      - title: "🥬 vegan"
+        payload: "/diet_preference"
+      - title: "🧀 vegetarisch"
+        payload: "/diet_preference"
+      - title: "🐟 pescetarisch"
+        payload: "/diet_preference"
+      - title: "🥩 fleisch"
+        payload: "/diet_preference"
 
+  utter_out_of_scope:
+  - text: "Pardon, da bin ich überfragt. Ich bin noch ein Koch in Ausbildung. 
+  Aber schreib mir gerne welche Zutaten du da hast und ich helfe dir daraus etwas leckeres zu kochen.🥘"
 
   utter_ask_allergies:
-  - text: "Hast du eine der folgenden Allergien oder Unverträglichkeiten?
-🥛 Laktose
-🌾 Gluten
-🥜 Nüsse"
+  - text: "Hast du eine der folgenden Allergien oder Unverträglichkeiten?"
+    buttons:
+      - title: "keine"
+        payload: "/user_allergies"
+      - title: "🥜 Nüsse"
+        payload: "/user_allergies"
+      - title: "🥛 Laktose"
+        payload: "/user_allergies"
+      - title: "🌾 Gluten"
+        payload: "/user_allergies"
 
   utter_thank_user:
   - text: "Merci, dann weiß ich Bescheid.👌"
@@ -40,11 +55,11 @@ responses:
   - text: "D'accord, welche Zutaten möchtest du denn gerne verwerten? 🍲"
 
   utter_search_recipe:
-  - text: "Ich habe folgende Rezeptvorschläge für dich: Cremige Brokkoli Pasta (20 min). Möchtest du dieses Rezept kochen?"
-    image: https://s.zentrum-der-gesundheit.de/img/3c6eeb8ac739ab76b53462735213c217?width=1280&height=720 
+  - text: "Ou lá lá, das ist ja ein wilder Mix. Am besten kochst du: Studitopf"
+    image: https://img.chefkoch-cdn.de/rezepte/716211174371022/bilder/1277664/crop-642x428/eintopf-aus-der-studentenkueche.jpg
 
   utter_start_cooking:
-  - text: "Hier ist der Link zum Rezept: https://www.zentrum-der-gesundheit.de/rezepte/hauptgerichte/nudel-rezepte/spaghetti-brokkoli-sauce"
+  - text: "Hier ist der Link zum Rezept: https://www.chefkoch.de/rezepte/716211174371022/Eintopf-aus-der-Studentenkueche.html"
 
   utter_greet:
   - text: "Bonjour! Ich bin Rémy – dein perönlicher Helfer, wenn's um's Kochen geht. Schön, dass du da bist!"

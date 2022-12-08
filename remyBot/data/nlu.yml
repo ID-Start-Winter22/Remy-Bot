@@ -18,6 +18,19 @@ nlu:
     - bonjour
     - salut
 
+
+- intent: out_of_scope
+  examples: |
+    - Wie heißt deine Mutter?
+    - Was ist der Sinn des Lebens?
+    - Was ist 1 + 2?
+    - Ich will essen bestellen?
+    - Was habe ich heute in der Uni?
+    - Welcher Tag ist heute?
+    - Was ist Kunst?
+    - Wann fährt meine Tram? 
+
+
 - intent: goodbye
   examples: |
     - cu
@@ -118,3 +131,18 @@ nlu:
     - Mais
     - Schmand
     - Nudeln
+    - Tomaten
+    - Milch
+    - Fleisch
+    - Steak
+    - Reis
+    - Apfel
+    - Lachs
+    - Linsen
+    - Avocado
+    - Brot
+    - Mehl
+    - Öl
+    - Kartoffeln
+    - Ramen
+    - Sojasoße
