@@ -2,6 +2,19 @@ body {
   background: #92D476;
 }
 
+#LandingPage {
+  font-family: quiche-display, sans-serif;
+  font-weight: 200;
+  color: white;
+  text-align: center;
+  margin-top: 200px;
+}
+
+#welcome {
+  font-family: quiche-display, sans-serif;
+  font-weight: 800;
+}
+
 /* ============= css related to chats =============== */
 
 .widget {
@@ -25,6 +38,9 @@ body {
 }
 
 .chat_header_title {
+  font-family: quiche-display,sans-serif;
+  font-weight: 800;
+  font-style: normal;;
   color: white;
   float: left;
   margin-top: 3%;
@@ -66,8 +82,9 @@ div.chats::-webkit-scrollbar {
 .botMsg {
   float: left;
   margin-top: 5px;
-  background: #e3e7ee;
-  color: black;
+  background: rgb(146,212,118);
+  background: linear-gradient(145deg, rgba(146,212,118,1) 0%, rgba(162,233,132,1) 100%);
+  color: white;
   /* box-shadow: 2px 3px 9px 0px #9a82842e; */
   margin-left: 0.5em;
   padding: 10px;
@@ -120,7 +137,7 @@ textarea-webkit-scrollbar {
   padding: 10px;
   float: right;
   margin-right: 0.5em;
-  background: #060dcfc7;
+  background: #bebebe;
   color: white;
   margin-bottom: 0.15em;
   font-size: 13px;
@@ -143,6 +160,7 @@ blockquote {
 .userAvatar {
   animation: animateElement linear 0.3s;
   animation-iteration-count: 1;
+  background-color: #92D476;
   border-radius: 50%;
   width: 1.5em;
   height: 1.5em;
@@ -220,7 +238,7 @@ blockquote {
 
 .dropdown-content li > a,
 .dropdown-content li > span {
-  color: #060dcfc7;
+  color: #92D476;
 }
 
 @keyframes animateElement {
@@ -246,7 +264,7 @@ blockquote {
   height: 500px;
   bottom: 5%;
   position: fixed;
-  background: white;
+  background: #92D476;
   border-radius: 10px 10px 10px 10px;
   box-shadow: 0px 2px 10px 1px #b5b5b5;
 }
@@ -327,7 +345,7 @@ blockquote {
 
 .order,
 #closeContents {
-  color: #060dcfc7;
+  color: #92D476;
 }
 
 .metadata_2,
@@ -420,7 +438,7 @@ div.content_data::-webkit-scrollbar {
   width: 80%;
   border-radius: 10px;
   background: #ffffff;
-  box-shadow: 2px 5px 5px 1px #dbdade;
+  
 }
 
 .menuTitle {
@@ -435,7 +453,7 @@ div.content_data::-webkit-scrollbar {
 
 .menuChips {
   display: block;
-  background: #060dcfc7;
+  background: #ffe47c;
   color: #fff;
   text-align: center;
   padding: 5px;
@@ -660,14 +678,14 @@ div.content_data::-webkit-scrollbar {
 
 .chip {
   background-color: white;
-  border: 1px solid#060dcfc7;
-  color: #060dcfc7;
+  border: 1px solid #92D476;
+  color: #92D476;
   font-weight: bolder;
   text-align: center;
 }
 
 .chip:hover {
-  background-color: #060dcfc7;
+  background-color: #92D476;
   color: white;
 }
 
@@ -719,7 +737,7 @@ div.content_data::-webkit-scrollbar {
 
 .collapsible-header {
   font-weight: bold;
-  color: #060dcfc7;
+  color: #92D476;
 }
 
 ul.collapsible > li:first-child .collapsible-header {
@@ -727,7 +745,7 @@ ul.collapsible > li:first-child .collapsible-header {
 }
 
 ul.collapsible > li:last-child .collapsible-header {
-  color: #060dcfc7;
+  color: #92D476;
   border-radius: 0px 0px 20px 20px;
 }
 
@@ -759,7 +777,7 @@ ul.collapsible > li:last-child .collapsible-body {
 .botTyping > div {
   width: 10px;
   height: 10px;
-  background-color: #060dcfc7;
+  background-color: #92D476;
   border-radius: 100%;
   display: inline-block;
   -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
