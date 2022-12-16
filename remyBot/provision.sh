@@ -23,7 +23,7 @@ sudo apt install -y \
 
 # COPY WEB-STUFF TO APACHE2 DEFAULT DIR
 IP=$1
-if [ -z "54.246.71.90" ]
+if [ -z "3.248.213.49" ]
 then 
   echo "IP param is unset! Aborting..."
   exit
