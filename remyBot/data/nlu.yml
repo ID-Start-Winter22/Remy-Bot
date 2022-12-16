@@ -146,3 +146,23 @@ nlu:
     - Kartoffeln
     - Ramen
     - Sojasoße
+
+
+- intent: deformation
+  examples: |
+    - du hurensohn 
+    - wixxer
+    - du kek 
+    - du hund
+    - du pussy 
+    - bist du dumm 
+    - arschloch
+    - dumm oder was
+    - spast
+
+- intent: rat
+  examples: |
+    - du ratte
+    - du bist ne ratte
+    - ratte 
+  

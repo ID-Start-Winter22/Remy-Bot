@@ -16,3 +16,14 @@ rules:
   steps:
   - intent: out_of_scope
   - action: utter_out_of_scope
+
+
+- rule: deformation
+  steps: 
+  - intent: deformation
+  - action: utter_deformation
+
+- rule: rat
+  steps:
+  - intent: rat
+  - action: utter_rat

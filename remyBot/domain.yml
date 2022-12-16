@@ -12,6 +12,8 @@ intents:
   - user_allergies
   - user_ingredients
   - out_of_scope
+  - deformation
+  - rat
 
 
 
@@ -32,6 +34,16 @@ responses:
   utter_out_of_scope:
   - text: "Pardon, da bin ich überfragt. Ich bin noch ein Koch in Ausbildung. 
   Aber schreib mir gerne welche Zutaten du da hast und ich helfe dir daraus etwas leckeres zu kochen.🥘"
+
+  utter_deformation:
+  - text: "Excuse moi?! Hat deine maman dir den nichts beigebracht"
+
+  utter_rat:
+  - text: >
+          "Das ist korrekt ich bin eine Ratte"
+          "Hier kannst du etwas mehr über meine Artgenossen lernen:"
+          "https://de.wikipedia.org/wiki/Ratten"
+
 
   utter_ask_allergies:
   - text: "Hast du eine der folgenden Allergien oder Unverträglichkeiten?"
