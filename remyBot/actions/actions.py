@@ -17,14 +17,10 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
-from . import mvg_nojson
-import json
 
 from bs4 import BeautifulSoup
 import requests
-import re
-import time
-import random 
+
 
 
 # NOTE(Michael): We could use this action to store the name in
