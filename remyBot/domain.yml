@@ -158,52 +158,58 @@ forms:
 responses:
   utter_greet:
   - text: "Salut mec"
-  - text: "Comment ça va ?"
-  - text: "Ça roule ?"
-  - text: "Ça biche ?"
-  - text: "Coucou !"
-  - text: "Salut! "
+  - text: "Comment ça va? Wie geht's Dir?"
+  - text: "Ça roule? ok?"
+  - text: "Coucou!"
+  - text: "Salut!"
+  - text: "Hey!"
+
 
   utter_did_that_help:
-  - text: "Hilft das?"
+  - text: "Hilft Dir das?"
 
   utter_goodbye:
   - text: "Bye"
+  - text: "Au revoir"
+  - text: "Bis bald!"
+  - text: "Bis dann!"
 
   utter_iamabot:
   - text: "Ich bin ein Chatbot, powered by Rasa."
 
   utter_greet_ask_name:
   - text: "Salut mec! Wie heißt du?"
-  - text: "Comment ça va? Was isd dein Name"
-  - text: "Ça roule? Wie 'eißt du?"
-  - text: "Ça biche? Stell dich doch mal vor"
-  - text: "Coucou! Je m'appelle Remy! Und du?"
-  - text: "Salut! Qua is dein Name "
+  - text: "Comment ça va? Wie ist dein Name?"
+  - text: "Ça roule? Wie heißt du?"
+  - text: "Ça biche? Stell dich doch mal vor!"
+  - text: "Coucou! Je m'appelle Remy! Wie heißt du?"
+  - text: "Salut! Wie ist dein Name?"
 
   utter_greet_with_name:
-  - text: "Enchanté, {username}. Isch bin Rémy dein persönlciher küchen Assistent!\nWie kann ich dir heute be'ilflisch sein?"
+  - text: "Enchanté, {username}. Ich bin Rémy dein persönlciher Küchenassistent!\nWie kann ich dir heute helfen?"
   
   utter_alternative':
-  - text: "Enchanté, {username}. Kann isch etwas anderes für disch tun, mon ami?"
+  - text: "Enchanté, {username}. Kann ich noch etwas anderes für dich tun, mon ami?"
 
   utter_user_ingridients:
-  - text: "Ich habe diese rezepte gefunden"
+  - text: "Ich habe diese Rezepte gefunden"
+  - text: "Wie wäre es mit einem dieser Rezepte?"
 
   utter_ask_user_zutaten_liste:
-  - text: "Ohhh! C'est bon!\nWelche Ingrédients 'ast du?"
-  - text: "Je suis surexcité!\nWas 'ast du in deine Frigo?"
+  - text: "Ohhh! C'est bon!\nWelche Zutaten hast du?"
+  - text: "Je suis surexcité!\nWas hast du in deinem Kühlschrank?"
+  - text: "Was hast du zu kochen da?"
 
   utter_ask_user_zeit:
-  - text: "Wie viel zeit 'ast du?"
+  - text: "Wie viel Zeit hast du?"
     buttons:
-    - title: "15min"
+    - title: "15 min"
       payload: '/say_user_ingridients{{"user_zeit":"15"}}'
-    - title: "30min"
+    - title: "30 min"
       payload: '/say_user_ingridients{{"user_zeit":"30"}}'
-    - title: "60min"
+    - title: "60 min"
       payload: '/say_user_ingridients{{"user_zeit":"60"}}'
-    - title: "120min"
+    - title: "120 min"
       payload: '/say_user_ingridients{{"user_zeit":"120"}}'
 
   utter_ask_user_diaet:
@@ -229,16 +235,16 @@ responses:
   
 
   utter_lets_cook:
-  - text: "Tres bien lass uns kochen!"
+  - text: "Très bien lass uns kochen!"
     image: "https://media.giphy.com/media/3wb47Zh5DQIXm/giphy.gif"
 
   
   utter_ask_start_cooking:
-  - text: 'möchtest du anfangen zu kochen?'
+  - text: 'Möchtest du anfangen zu kochen?'
     buttons:
-    - title: "Ouí"
+    - title: "Ja, gerne"
       payload: '/say_if_start_cooking'
-    - title: "No"
+    - title: "Nein, lieber später"
       payload: '/utter_alternative'
 
 
@@ -247,11 +253,11 @@ responses:
   Aber schreib mir gerne welche Zutaten du da hast und ich helfe dir daraus etwas leckeres zu kochen.🥘"
 
   utter_deformation:
-  - text: "Excuse moi?! Hat deine Maman dir den nichts beigebracht"
+  - text: "Excuse moi?! Hat deine Maman dir denn nichts beigebracht."
 
   utter_rat:
   - text: >
-          "Das ist korrekt ich bin eine Ratte"
+          "Das ist korrekt, ich bin eine Ratte"
           "Hier kannst du etwas mehr über meine Artgenossen lernen:"
           "https://de.wikipedia.org/wiki/Ratten"
 
