@@ -1,21 +1,11 @@
-version: "3.1"
+version: "3.0"
 
 stories:
-
-- story: vegan no allergies
+- story: Ask the bot if it remembers user's name
   steps:
-  - intent: greet
-  - action: utter_greet
-  - action: utter_ask_preference
-  - intent: diet_preference
-  - action: utter_ask_allergies
-  - intent: user_allergies
-  - action: utter_thank_user
-  - action: utter_ask_to_cook
-  - intent: affirm
-  - action: utter_ask_ingredients
-  - intent: user_ingredients
-  - action: utter_search_recipe
-  - intent: affirm
-  - action: utter_start_cooking
+  - intent: bot_challenge_name
+  - action: action_get_name
+
+
+
 

@@ -1,42 +1,253 @@
-version: "3.1"
+version: "3.0"
 
 intents:
   - greet
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
   - bot_challenge
-  - diet_preference
-  - user_allergies
-  - user_ingredients
+  - bot_challenge_name
+  - my_name_is
+  - ask_start_cooking
+  - say_rezept_nummer
+  - say_user_ingridients
+  - say_if_start_cooking
   - out_of_scope
   - deformation
   - rat
 
 
+actions:
+  - action_store_name
+  - action_get_name
+  - action_start_parser
+  - action_select_rezept
+  - action_execute_rezept
+
+entities:
+  - username
+  - user_zutaten_liste
+  - user_zeit
+  - user_diaet
+  - rezept_auswahl
+  - rezept_nummer
+  - title_liste
+  - title_liste_1
+  - title_liste_2
+  - title_liste_3
+  - link_list
+  - final_url
+
+  
+
+slots:
+  username:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: username
+  user_zutaten_liste:
+    type: list
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: user_zutaten_liste
+      conditions:
+      - active_loop: schritt1_form
+  user_zeit:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: user_zeit
+      conditions:
+      - active_loop: schritt1_form
+  user_diaet:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: user_diaet
+      conditions:
+      - active_loop: schritt1_form
+  rezept_auswahl:
+    type: list
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: rezept_auswahl
+      conditions:
+      - active_loop: schritt1_form
+  title_liste:
+    type: list
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: title_liste
+      conditions:
+      - active_loop: schritt1_form    
+  title_liste_1:
+    type: list
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: title_liste_1
+      conditions:
+      - active_loop: schritt1_form    
+  title_liste_2:
+    type: list
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: title_liste_2
+      conditions:
+      - active_loop: schritt1_form    
+  title_liste_3:
+    type: list
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: title_liste_3
+      conditions:
+      - active_loop: schritt1_form    
+  link_list:
+    type: list
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: link_list
+      conditions:
+      - active_loop: schritt1_form    
+  rezept_nummer:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: rezept_nummer
+      conditions:
+      - active_loop: schritt2_form
+  final_url:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: final_url
+      conditions:
+      - active_loop: schritt2_form
+ 
+
+forms:
+  schritt1_form:
+    required_slots:
+    - user_zutaten_liste
+    - user_zeit
+    - user_diaet
+
+
+  schritt2_form:
+    required_slots:
+    - rezept_nummer
+
+  schritt3_form:
+    required_slots:
+    - final_url
+
+  
 
 responses:
+  utter_greet:
+  - text: "Salut mec"
+  - text: "Comment ça va ?"
+  - text: "Ça roule ?"
+  - text: "Ça biche ?"
+  - text: "Coucou !"
+  - text: "Salut! "
 
-  utter_ask_preference:
+  utter_did_that_help:
+  - text: "Hilft das?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "Ich bin ein Chatbot, powered by Rasa."
+
+  utter_greet_ask_name:
+  - text: "Salut mec! Wie heißt du?"
+  - text: "Comment ça va? Was isd dein Name"
+  - text: "Ça roule? Wie 'eißt du?"
+  - text: "Ça biche? Stell dich doch mal vor"
+  - text: "Coucou! Je m'appelle Remy! Und du?"
+  - text: "Salut! Qua is dein Name "
+
+  utter_greet_with_name:
+  - text: "Enchanté, {username}. Isch bin Rémy dein persönlciher küchen Assistent!\nWie kann ich dir heute be'ilflisch sein?"
+  
+  utter_alternative':
+  - text: "Enchanté, {username}. Kann isch etwas anderes für disch tun, mon ami?"
+
+  utter_user_ingridients:
+  - text: "Ich habe diese rezepte gefunden"
+
+  utter_ask_user_zutaten_liste:
+  - text: "Ohhh! C'est bon!\nWelche Ingrédients 'ast du?"
+  - text: "Je suis surexcité!\nWas 'ast du in deine Frigo?"
+
+  utter_ask_user_zeit:
+  - text: "Wie viel zeit 'ast du?"
+    buttons:
+    - title: "15min"
+      payload: '/say_user_ingridients{{"user_zeit":"15"}}'
+    - title: "30min"
+      payload: '/say_user_ingridients{{"user_zeit":"30"}}'
+    - title: "60min"
+      payload: '/say_user_ingridients{{"user_zeit":"60"}}'
+    - title: "120min"
+      payload: '/say_user_ingridients{{"user_zeit":"120"}}'
+
+  utter_ask_user_diaet:
   - text: "Wie kochst du am liebsten?"
     buttons:
-      - title: "🥬 vegan"
-        payload: "/diet_preference"
-      - title: "🧀 vegetarisch"
-        payload: "/diet_preference"
-      - title: "🐟 pescetarisch"
-        payload: "/diet_preference"
-      - title: "🥩 fleisch"
-        payload: "/diet_preference"
+    - title: "🥬 Vegan"
+      payload: '/say_user_ingridients{{"user_diaet":"Vegan-"}}'
+    - title: "🧀 Vegetarisch"
+      payload: '/say_user_ingridients{{"user_diaet":"Vegetarisch-"}}'
+    - title: "🥩 Fleisch"
+      payload: '/say_user_ingridients{{"user_diaet":""}}'
+
+  utter_ask_for_rezept_nummer:
+  - text: Welches Rezept möchtest du kochen?
+    buttons:
+    - title: "{title_liste_1}"
+      payload: '/say_rezept_nummer{{"rezept_nummer":"1"}}'
+    - title: "{title_liste_2}"
+      payload: '/say_rezept_nummer{{"rezept_nummer":"2"}}'
+    - title: "{title_liste_3}"
+      payload: '/say_rezept_nummer{{"rezept_nummer":"3"}}'
+
+  
+
+  utter_lets_cook:
+  - text: "Tres bien lass uns kochen!"
+    image: "https://media.giphy.com/media/3wb47Zh5DQIXm/giphy.gif"
+
+  
+  utter_ask_start_cooking:
+  - text: 'möchtest du anfangen zu kochen?'
+    buttons:
+    - title: "Ouí"
+      payload: '/say_if_start_cooking'
+    - title: "No"
+      payload: '/utter_alternative'
+
 
   utter_out_of_scope:
   - text: "Pardon, da bin ich überfragt. Ich bin noch ein Koch in Ausbildung. 
   Aber schreib mir gerne welche Zutaten du da hast und ich helfe dir daraus etwas leckeres zu kochen.🥘"
 
   utter_deformation:
-  - text: "Excuse moi?! Hat deine maman dir den nichts beigebracht"
+  - text: "Excuse moi?! Hat deine Maman dir den nichts beigebracht"
 
   utter_rat:
   - text: >
@@ -45,52 +256,7 @@ responses:
           "https://de.wikipedia.org/wiki/Ratten"
 
 
-  utter_ask_allergies:
-  - text: "Hast du eine der folgenden Allergien oder Unverträglichkeiten?"
-    buttons:
-      - title: "keine"
-        payload: "/user_allergies"
-      - title: "🥜 Nüsse"
-        payload: "/user_allergies"
-      - title: "🥛 Laktose"
-        payload: "/user_allergies"
-      - title: "🌾 Gluten"
-        payload: "/user_allergies"
 
-  utter_thank_user:
-  - text: "Merci, dann weiß ich Bescheid.👌"
-
-  utter_ask_to_cook:
-  - text: "Hast du Lust jetzt etwas zu kochen?"
-
-  utter_ask_ingredients:
-  - text: "D'accord, welche Zutaten möchtest du denn gerne verwerten? 🍲"
-
-  utter_search_recipe:
-  - text: "Ou lá lá, das ist ja ein wilder Mix. Am besten kochst du: Studitopf"
-    image: https://img.chefkoch-cdn.de/rezepte/716211174371022/bilder/1277664/crop-642x428/eintopf-aus-der-studentenkueche.jpg
-
-  utter_start_cooking:
-  - text: "Hier ist der Link zum Rezept: https://www.chefkoch.de/rezepte/716211174371022/Eintopf-aus-der-Studentenkueche.html"
-
-  utter_greet:
-  - text: "Bonjour! Ich bin Rémy – dein perönlicher Helfer, wenn's um's Kochen geht. Schön, dass du da bist!"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
 
 session_config:
   session_expiration_time: 60

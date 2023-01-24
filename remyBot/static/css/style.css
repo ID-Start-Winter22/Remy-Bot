@@ -19,14 +19,19 @@ body {
 
 .widget {
   display: none;
-  width: 350px;
+  width: 80%;
   right: 15px;
-  height: 500px;
+  height: 90%;
   bottom: 5%;
   position: fixed;
   background: #fff;
   border-radius: 10px 10px 10px 10px;
   box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 5px 0 #00000096;
+  z-index: 20;
+}
+
+.audiolayout {
+  z-index: 10;
 }
 
 .chat_header {
@@ -49,7 +54,7 @@ body {
 
 .chats {
   /* display: none; */
-  height: 385px;
+  height: 90%;
   padding: 2px;
   border-radius: 1px;
   overflow-y: scroll;
@@ -417,10 +422,14 @@ div.content_data::-webkit-scrollbar {
 
 .imgcard {
   object-fit: cover;
-  width: 80%;
-  height: 50%;
+  width: 200px;
+  height: 128px;
   border-radius: 10px;
   margin-left: 1%;
+  position: relative;
+  top: -20px;
+  left: 0px;
+  float: right;
 }
 
 /* css for markdown images */

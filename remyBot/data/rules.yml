@@ -1,7 +1,6 @@
-version: "3.1"
+version: "3.0"
 
 rules:
-
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
@@ -11,6 +10,70 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: greeting
+  steps: 
+  - intent: greet
+  - action: utter_greet_ask_name
+
+- rule: save name
+  steps:
+  - intent: my_name_is
+  - action: utter_greet_with_name
+
+
+- rule: Activate schritt1 form
+  steps:
+  - intent: say_user_ingridients
+  - action: schritt1_form
+  - active_loop: schritt1_form
+
+- rule: Submit schritt1 form
+  condition:
+  - active_loop: schritt1_form
+  steps:
+  - action: schritt1_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_lets_cook
+  - action: action_start_parser
+  - action: utter_ask_for_rezept_nummer
+
+- rule: Activate schritt2 form
+  steps:
+  - intent: say_rezept_nummer
+  - action: schritt2_form
+  - active_loop: schritt2_form
+
+- rule: Submit schritt2 form
+  condition:
+  - active_loop: schritt2_form
+  steps:
+  - action: schritt2_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null 
+  - action: action_select_rezept
+  - action: utter_ask_start_cooking
+
+
+- rule: Activate schritt3 form
+  steps:
+  - intent: say_if_start_cooking
+  - action: schritt3_form
+  - active_loop: schritt3_form
+
+- rule: Submit schritt3 form
+  condition:
+  - active_loop: schritt3_form
+  steps:
+  - action: schritt3_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null 
+  - action: action_execute_rezept
+
 
 - rule: out-of-scope
   steps:
@@ -27,3 +90,9 @@ rules:
   steps:
   - intent: rat
   - action: utter_rat
+
+ 
+
+
+
+

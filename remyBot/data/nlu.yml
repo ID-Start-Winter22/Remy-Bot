@@ -1,22 +1,28 @@
-version: "3.1"
+version: "3.0"
 
 nlu:
 - intent: greet
   examples: |
-    - hey
-    - hallo
-    - hi
-    - hey du
-    - guten morgen
-    - guten abend
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - guten tag
-    - servus
-    - bonjour
-    - salut
+    - Hallo
+    - Guten Morgen
+    - Guten Tag
+    - Guten Abend
+    - Willkommen
+    - Hi
+    - Moin
+    - Servus
+    - Grüß Gott
+    - Hallöchen
+    - Grüß dich
+    - Hey
+    - Tach
+    - Schönen Tag noch
+    - Guten Rutsch
+    - Herzlich willkommen
+    - Freut mich, dich kennenzulernen
+    - Wie geht's?
+    - Was gibt's Neues?
+    - Na, wie geht's dir?
 
 
 - intent: out_of_scope
@@ -31,6 +37,7 @@ nlu:
     - Wann fährt meine Tram? 
 
 
+
 - intent: goodbye
   examples: |
     - cu
@@ -43,6 +50,7 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - Tschüss
 
 - intent: affirm
   examples: |
@@ -53,6 +61,10 @@ nlu:
     - that sounds good
     - correct
     - ja
+    - jap
+    - yep
+    - genau
+    - korrekt
 
 - intent: deny
   examples: |
@@ -63,89 +75,156 @@ nlu:
     - don't like that
     - no way
     - not really
+    - nein
+    - ne
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
 
-- intent: mood_unhappy
-  examples: |
-    - mein tag war schrecklich
-    - ich bin traurig
-    - ich fühle mich nicht gut
-    - ich bin enttäuscht
-    - super traurig
-    - ich bin so traurig
-    - traurig
-    - sehr traurig
-    - unglücklich
-    - nicht gut
-    - nicht sehr gut
-    - extrem traurig
-    - so traurig
-    - soo traurig
 
 - intent: bot_challenge
   examples: |
-    - bist du ein bot?
-    - bist du ein mensch?
-    - bist du eine person?
-    - spreche ich mit einem bot?
-    - spreche ich mit einer person?
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - wer bist du?
+    - bist du ein Mensch?
+    - spreche ich mit einem Chatbot?
 
-- intent: diet_preference
+- intent: my_name_is
   examples: |
-    - vegan
-    - veganer
-    - veganerin
-    - ich bin vegan
-    - ich esse vegan
-    - ich lebe vegan
-    - ich bin veganer
-    - ich bin veganerin
+    - Ich heiße [Philipp](username)
+    - Ich bin [Tina](username)
+    - [Thomas](username)
+    - Mein Name ist [Anna](username)
+    - Ich bin der [Horst](username)
+    - [Hans](username)
+    - mein name ist [Philipp](username)
 
-- intent: user_allergies
-  examples: |
-    - keine
-    - ich habe keine allergien
-    - ich bin gegen nichts allergisch
-    - nein
-    - keine allergien
+- lookup: username
+  examples: |    
+    - Philipp
+    - Amy
+    - David
+    - Gudrun
+    - Tina
+    _ Michael
+    - Maximilian
+    - Alexander
+    - Paul
+    - David
+    - Benjamin
+    - Johannes
+    - Lucas
+    - Jonas
+    - Felix
+    - Fabian
+    - Luis
+    - Nicolas
+    - Tobias
+    - Jakob
+    - Kevin
+    - Marvin
+    - Dennis
+    - Sven
+    - Sophia
+    - Mia
+    - Emma
+    - Hannah
+    - Lea
+    - Anna
+    - Marie
+    - Johanna
+    - Luisa
+    - Leonie
+    - Lina
+    - Pia
+    - Sarah
+    - Laura
+    - Antonia
+    - Lisa
+    - Melissa
 
-- intent: user_ingredients
+- intent: bot_challenge_name
   examples: |
+    - Wer bin ich?
+    - Wie heisse ich?
+    - Erinnerst du dich an meinen Namen?
+
+
+- intent: say_user_ingridients
+  examples: |
+    - ich habe lust zu kochen
+    - lass uns kochen 
+    - hunger!
+    - ich habe [kartoffeln](user_zutaten_liste), [Tomaten](user_zutaten_liste) und [Nudeln](user_zutaten_liste)
+    - ich habe [15](user_zeit)min zeit 
+    - [Schweinefleisch](user_zutaten_liste), [brokkoli](user_zutaten_liste), [Mais](user_zutaten_liste), [Schmand](user_zutaten_liste)
+    - [Schmand](user_zutaten_liste) und [Brokkoli](user_zutaten_liste) und [Mais](user_zutaten_liste) und [Nudeln](user_zutaten_liste)
+    - [Paprikaschoten](user_zutaten_liste), [Aubergine](user_zutaten_liste), [Lorbeerblätter](user_zutaten_liste), [Tomaten](user_zutaten_liste)
+    - [zwiebel](user_zutaten_liste) [Champignons](user_zutaten_liste) [Quark](user_zutaten_liste) [fleisch](user_zutaten_liste)
+  
+- lookup: user_zutaten_liste
+  examples: |
+    - Kartoffeln
+    - Zwiebeln
+    - Rindfleisch
+    - Schweinefleisch
+    - sauerkraut
+    - Speck
+    - Kohl
+    - Mehl
+    - Milch
+    - Senf
+    - Tomaten
+    - Paprika
+    - Champignons
+    - Hackfleisch
+    - Räucherwurst
+    - Quark
+    - Schlagsahne
+    - Butter
+    - Eier
+    - Kartoffelpüree
+    - Ingwer
+    - Knoblauch
+    - Majoran
+    - Lorbeerblätter
+    - Pfeffer
+    - Salz
+    - Leberwurst
+    - Blutwurst
+    - Mettwurst
+    - Leinsamen
+    - Sonnenblumenkerne
+    - Dinkelmehl
+    - Graupen
+    - Haferflocken
+    - Linsen
+    - Bohnen
+    - Erbsen
+    - Karotten
+    - Sellerie
+    - Lauch
+    - Paprikapulver
+    - Kümmel
+    - Kreuzkümmel
+    - Paprika edelsüß
+    - Thymian
+    - Oregano
     - Brokkoli
     - Mais
     - Schmand
-    - Nudeln
-    - Tomaten
-    - Milch
-    - Fleisch
-    - Steak
-    - Reis
-    - Apfel
-    - Lachs
-    - Linsen
-    - Avocado
-    - Brot
-    - Mehl
-    - Öl
-    - Kartoffeln
-    - Ramen
-    - Sojasoße
+
+
+- intent: say_rezept_nummer
+  examples: |
+    - Ich will Rezep nummer [3](rezept_nummer)
+    - ich will die [1](rezept_nummer)
+    - [2](rezept_nummer)
+
+- intent: ask_start_cooking
+
+- intent: say_if_start_cooking
 
 
 - intent: deformation
@@ -165,4 +244,3 @@ nlu:
     - du ratte
     - du bist ne ratte
     - ratte 
-  
