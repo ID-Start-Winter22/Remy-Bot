@@ -1,5 +1,5 @@
 body {
-  background: #92D476;
+  background: #92d476;
 }
 
 #LandingPage {
@@ -19,46 +19,52 @@ body {
 
 .widget {
   display: none;
-  width: 80%;
+  width: 350px;
   right: 15px;
-  height: 90%;
+  height: 526px;
   bottom: 5%;
   position: fixed;
   background: #fff;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 15px;
   box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 5px 0 #00000096;
-  z-index: 20;
 }
 
-.audiolayout {
-  z-index: 10;
+@mobile screen and (max-width: 480px) {
+  .widget {
+    overflow: scroll;
+     overflow-x: hidden;
+    width: 320px;
+    box-sizing: border-box;
+  }
+
 }
 
 .chat_header {
   height: 60px;
-  background: #92D476;
-  border-radius: 10px 10px 0px 0px;
+  background: #92d476;
+  border-radius: 15px 15px 0px 0px;
   padding: 5px;
   font-size: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .chat_header_title {
-  font-family: quiche-display,sans-serif;
+  font-family: quiche-display, sans-serif;
   font-weight: 800;
-  font-style: normal;;
+  font-style: normal;
   color: white;
-  float: left;
-  margin-top: 3%;
-  margin-left: 35%;
+  text-align: center;
 }
 
 .chats {
   /* display: none; */
-  height: 90%;
+  height: 385px;
   padding: 2px;
   border-radius: 1px;
   overflow-y: scroll;
-  margin-top: 1px;
   transition: 0.2s;
 }
 
@@ -87,8 +93,12 @@ div.chats::-webkit-scrollbar {
 .botMsg {
   float: left;
   margin-top: 5px;
-  background: rgb(146,212,118);
-  background: linear-gradient(145deg, rgba(146,212,118,1) 0%, rgba(162,233,132,1) 100%);
+  background: rgb(146, 212, 118);
+  background: linear-gradient(
+    145deg,
+    rgba(146, 212, 118, 1) 0%,
+    rgba(162, 233, 132, 1) 100%
+  );
   color: white;
   /* box-shadow: 2px 3px 9px 0px #9a82842e; */
   margin-left: 0.5em;
@@ -128,6 +138,7 @@ textarea {
 
 textarea::-webkit-input-placeholder {
   font-family: Lato;
+  color: #fff;
 }
 
 textarea-webkit-scrollbar {
@@ -165,7 +176,7 @@ blockquote {
 .userAvatar {
   animation: animateElement linear 0.3s;
   animation-iteration-count: 1;
-  background-color: #92D476;
+  background-color: #92d476;
   border-radius: 50%;
   width: 1.5em;
   height: 1.5em;
@@ -175,44 +186,85 @@ blockquote {
 }
 
 .usrInput {
-  padding: 0.5em;
-  width: 80%;
-  margin-left: 4%;
   border: 0;
   padding-left: 15px;
+  background-color: #c5deb3;
+  color: #fff;
   height: 40px;
+  line-height: 35px;
+  border-radius: 15px;
+  width: 260px;
+}
+
+@media screen and (max-width: 430px) {
+  .usrInput {
+    border: 0;
+    font-size: 16px;
+    padding-left: 15px;
+    background-color: #c5deb3;
+    color: #fff;
+    height: 40px;
+    line-height: 35px;
+    border-radius: 15px;
+    width: 230px;
+  }
+  
 }
 
 .keypad {
-  /* display: none;  */
-  background: white;
-  height: 50px;
+  /* display: none;  */ 
+  height: 80px;
   position: absolute;
   bottom: 0px;
   width: 100%;
-  padding: 5px;
-  border-radius: 0px 0px 10px 10px;
-  border-top: 1px solid #e3e7ee;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 #sendButton {
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
   display: inline-block;
   float: right;
-  margin-right: 30px;
   text-align: center;
   padding: 5px;
   font-size: 20px;
   cursor: pointer;
-  color: #92D476;
+  background-color: #aad476;
+  position: relative;
+}
+
+#sendbutton svg {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .imgProfile {
   box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096;
   border-radius: 50px;
   width: 60%;
+}
+
+@media screen and (max-width: 480px) {
+  
+  .imgProfile {
+    box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096;
+    border-radius: 50px;
+    width: 200%;
+    position: relative;
+    right: 50px;
+    bottom: 20px;
+    z-index: 10px;
+    background-color: #92d476;
+  }
+  
 }
 
 .profile_div {
@@ -236,14 +288,13 @@ blockquote {
 .dropdown-trigger {
   cursor: pointer;
   color: white;
-  margin-right: 5px;
-  float: right;
-  margin-top: 3%;
+  position: absolute;
+  right: 15px;
 }
 
 .dropdown-content li > a,
 .dropdown-content li > span {
-  color: #92D476;
+  color: #92d476;
 }
 
 @keyframes animateElement {
@@ -269,7 +320,7 @@ blockquote {
   height: 500px;
   bottom: 5%;
   position: fixed;
-  background: #92D476;
+  background: #92d476;
   border-radius: 10px 10px 10px 10px;
   box-shadow: 0px 2px 10px 1px #b5b5b5;
 }
@@ -350,7 +401,7 @@ blockquote {
 
 .order,
 #closeContents {
-  color: #92D476;
+  color: #92d476;
 }
 
 .metadata_2,
@@ -422,14 +473,10 @@ div.content_data::-webkit-scrollbar {
 
 .imgcard {
   object-fit: cover;
-  width: 200px;
-  height: 128px;
+  width: 80%;
+  height: 50%;
   border-radius: 10px;
   margin-left: 1%;
-  position: relative;
-  top: -20px;
-  left: 0px;
-  float: right;
 }
 
 /* css for markdown images */
@@ -447,7 +494,6 @@ div.content_data::-webkit-scrollbar {
   width: 80%;
   border-radius: 10px;
   background: #ffffff;
-  
 }
 
 .menuTitle {
@@ -687,14 +733,14 @@ div.content_data::-webkit-scrollbar {
 
 .chip {
   background-color: white;
-  border: 1px solid #92D476;
-  color: #92D476;
+  border: 1px solid #92d476;
+  color: #92d476;
   font-weight: bolder;
   text-align: center;
 }
 
 .chip:hover {
-  background-color: #92D476;
+  background-color: #92d476;
   color: white;
 }
 
@@ -746,7 +792,7 @@ div.content_data::-webkit-scrollbar {
 
 .collapsible-header {
   font-weight: bold;
-  color: #92D476;
+  color: #92d476;
 }
 
 ul.collapsible > li:first-child .collapsible-header {
@@ -754,7 +800,7 @@ ul.collapsible > li:first-child .collapsible-header {
 }
 
 ul.collapsible > li:last-child .collapsible-header {
-  color: #92D476;
+  color: #92d476;
   border-radius: 0px 0px 20px 20px;
 }
 
@@ -786,7 +832,7 @@ ul.collapsible > li:last-child .collapsible-body {
 .botTyping > div {
   width: 10px;
   height: 10px;
-  background-color: #92D476;
+  background-color: #92d476;
   border-radius: 100%;
   display: inline-block;
   -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
@@ -883,4 +929,33 @@ video:focus {
 
 .pdf_link a {
   color: #060dcfc7;
+}
+
+.welcome-mobile {
+  font-family: quiche-display, sans-serif;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  display: none;
+}
+
+@media screen and (max-width: 641px) {
+  #LandingPage img {
+
+  width: 340px;
+  height: 300px;
+  object-fit: cover;
+  position: relative;
+  top: -100px;
+
+  }
+
+  #LandingPage {
+    margin-top: 20px;
+  }
+
+  .widget {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
