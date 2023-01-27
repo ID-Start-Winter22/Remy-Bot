@@ -92,57 +92,19 @@ nlu:
 
 - intent: my_name_is
   examples: |
-    - Ich heiße [Philipp](username)
+    - Ich heiße [David](username)
     - Ich bin [Tina](username)
     - [Thomas](username)
     - Mein Name ist [Anna](username)
     - Ich bin der [Horst](username)
-    - [Hans](username)
+    - [Martin](username)
     - mein name ist [Philipp](username)
+    - [Gudrun](username)
+    - nenn mich [Amy](username)
+    - du kannst [Sophie] zu mir sagen
+    - Call me [Ash]
 
-- lookup: username
-  examples: |    
-    - Philipp
-    - Amy
-    - David
-    - Gudrun
-    - Tina
-    _ Michael
-    - Maximilian
-    - Alexander
-    - Paul
-    - David
-    - Benjamin
-    - Johannes
-    - Lucas
-    - Jonas
-    - Felix
-    - Fabian
-    - Luis
-    - Nicolas
-    - Tobias
-    - Jakob
-    - Kevin
-    - Marvin
-    - Dennis
-    - Sven
-    - Sophia
-    - Mia
-    - Emma
-    - Hannah
-    - Lea
-    - Anna
-    - Marie
-    - Johanna
-    - Luisa
-    - Leonie
-    - Lina
-    - Pia
-    - Sarah
-    - Laura
-    - Antonia
-    - Lisa
-    - Melissa
+
 
 - intent: bot_challenge_name
   examples: |
@@ -244,3 +206,4 @@ nlu:
     - du ratte
     - du bist ne ratte
     - ratte 
+    - du Rattensohn
